@@ -5,21 +5,26 @@
         <h1>Log-In to your Account</h1>
     </head>
     <body>
-        <div>
-            <form action="" method="GET">
+        <div class="login">
+            <form action="" method="POST">
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" placeholder="email@domain.com" required><br>
                 <label for="pwd">Password:</label><br>
                 <input type="password" id="pwd" name="pwd" placeholder="password" required><br><br>
-
-                <input type="submit" value="Log-In">
+                <input type="submit" value="Log-In" style="width: 20%;">
             </form>
-        </div>
-        <div>
-            <label for="signup">New User? </label>
+
+            <label for="signup">New User? </label><br>
             <button type="button" onclick="location.href='signup.html'" >Sign Up</button><br><br>
-            <label for="recover">Forgot Credentials? </label>
+            
+            <label for="recover">Forgot Credentials? </label><br>
             <button type="submit">Recover access</button>
+        </div>
+        <div class="show">
+            <label>Forgot Username?</label><br>
+            <button type="button">Recover Username</button><br><br>
+            <label>Forgot Password?</label><br>
+            <button type="button">Recover Password</button>
         </div>
     </body>
 </html>
