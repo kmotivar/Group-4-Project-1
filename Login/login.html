@@ -1,30 +1,35 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="code.js"></script>
         <title>Log-In</title>
-        <h1>Log-In to your Account</h1>
     </head>
     <body>
-        <div class="login">
-            <form action="" method="POST">
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="email@domain.com" required><br>
-                <label for="pwd">Password:</label><br>
-                <input type="password" id="pwd" name="pwd" placeholder="password" required><br><br>
-                <input type="submit" value="Log-In" style="width: 20%;">
-            </form>
-
-            <label for="signup">New User? </label><br>
-            <button type="button" onclick="location.href='signup.html'" >Sign Up</button><br><br>
-            
-            <label for="recover">Forgot Credentials? </label><br>
-            <button type="submit">Recover access</button>
-        </div>
-        <div class="show">
-            <label>Forgot Username?</label><br>
-            <button type="button">Recover Username</button><br><br>
-            <label>Forgot Password?</label><br>
-            <button type="button">Recover Password</button>
-        </div>
+            <nav class="menu">
+                <button type="button">HOME</button>
+                <button type="button">ABOUT US</button>
+            </nav>
+            <h1>Log-In to your Account</h1>
+            <div class="login" id="hide">
+                <form action="survey.html" method="POST">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="email@domain.com" required><br>
+                    <label for="pwd">Password:</label><br>
+                    <input type="password" id="pwd" name="pwd" placeholder="password" required><br><br>
+                    <input type="submit" value="Log-In" style="width: 20%;">
+                </form>
+                
+                <label for="signup">New User? </label><br>
+                <button type="button" onclick="location.href='signup.html'" >Sign Up</button><br><br>
+                
+                <label for="recover">Forgot Credentials? </label><br>
+                <button type="submit" onclick="recover()">Recover access</button>
+            </div>
+            <div class="show" id="show" style="display: none;">
+                <label>Forgot Username?</label><br>
+                <button type="button">Recover Username</button><br><br>
+                <label>Forgot Password?</label><br>
+                <button type="button">Recover Password</button>
+            </div>
     </body>
 </html>
