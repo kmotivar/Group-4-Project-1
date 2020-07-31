@@ -8,7 +8,7 @@
     </head>
 <body>
     <h1>This is the survey page</h1>
-    <form method="POST" action="about.html">
+    <form method="POST" action="../About us/about.html"> 
         <fieldset>
             <legend>Survey</legend>
             <!--ADD 4 questions per div-->
@@ -94,27 +94,30 @@
 
                 <input class="sub" type="submit" value="Submit">
             </div>
-            <button type="button" class="sub" id="aa" onclick="next(1)">Next</button>
+            <button type="button" class="sub" id="hidenext" onclick="next(1)">Next</button>
         </fieldset>
     </form>
     <script>
+        //next idea taken from https://www.w3schools.com/howto/howto_css_login_form.asp
+        //Completely studied and its totally different and modified compared to w3schools
+
         var curDiv = 0;
-        showDiv(curDiv);
+        showDiv(curDiv); //this will display 1st div
 
         function showDiv(n) {
-            //Function to display specified tab of the form
+            //Function to display specified div 
             var x = document.getElementsByClassName("form-div");   
             x[n].style.display = "block";
         }
         
         function next(n) {
+            //Function will say which div to display
             var x = document.getElementsByClassName("form-div");
-            x[curDiv].style.display = "none";
-            curDiv = curDiv + n;
-            //display the correct tab
-            showDiv(curDiv);
+            x[curDiv].style.display = "none";   //hide the current div
+            curDiv = curDiv + n;                //increase counter and display next div
+            showDiv(curDiv);                    //display the correct tab
             if(curDiv == 3) {
-                document.getElementById("aa").style.display = "none";
+                document.getElementById("hidenext").style.display = "none";       //if last div is reached then next will get hidden
             }
         }
     </script>
