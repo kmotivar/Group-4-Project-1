@@ -19,3 +19,18 @@ form {
     display: flex;
     margin-bottom: 8px;
   }
+  
+  input[type=submit]:hover , button:hover{
+    background-color: rgb(115, 115, 245);
+    color: black;
+  }
+
+  input[type=submit] , button{
+    width: 200px;
+    background-color: black;
+    color: white;
+    padding: 14px 10px;
+    margin: 8px 30;
+    border: none;
+    border-radius: 4px;
+  } 

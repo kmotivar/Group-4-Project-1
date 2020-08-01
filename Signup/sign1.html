@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>
-        Sign-In page
+        Sign-UP page
     </title>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body background="pics/new1.jpg" width="500" height ="500">
-
-    <form action=" " method=" ">
-        <fieldset><b>SIGN-IN</b></fieldset>
+<body>
+    <div>
+    <form action="sign2.html" method="POST" onsubmit="validate(event)">
         <fieldset>
+        <legend><b>SIGN-UP</b></legend>
+
         <label for="fname"><b>Full-Name</b></label>
-        <input type="text" id="fname" name="fname">
+        <input type="text" id="fname" name="fname" placeholder="Full Name" required>
         <br>
         <br>
         <label for="email"><b>Email:</b></label>
@@ -22,28 +23,39 @@
         <br>
         <br>
         <label for="password"><b>Password:</b></label>
-        <input type="password" id="pwd" name="password" placeholder="password">
+        <input type="password" id="pwd" name="password" placeholder="password" required>
         <br>
         <br>
         <lable for="password"><b>Password Confirmation:</b></lable>
-        <input type="password" id="pwd1" name="password1" placeholder="Renter-the-password">
+        <input type="password" id="pwd1" name="password1" placeholder="Renter-the-password" required>
         <br>
         <br>
-        <a class="button" href="sign2.html"><b>Next</b></a>
+        <label for="Birthday"><b>Birthday:</b></label>
+        <input type="date" id="date" name="date" placeholder="dd/mm/yyyy" required>
+        <br>
+        <br>
+        <input type="submit" value="Next"/>
         </fieldset>
-</form>
-</body>
-</html>
+    </form>
+    </div>
+    <script>
+        //Code taken from https://codepen.io/diegoleme/pen/surIK
+        //Taking password input
+        var password = document.getElementById("pwd");
+        var confirm_password = document.getElementById("pwd1");
 
-
-
-
-
-
-
-
-
-
-    
+        function validatePassword(){
+            //if password is not same
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");    
+            } 
+            else {
+                confirm_password.setCustomValidity('');         
+            }
+        }
+        //calling functions
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
 </body>
 </html>
