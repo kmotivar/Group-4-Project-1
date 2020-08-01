@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Survey</title>
+    </head>
+<body>
+    <h1>This is the survey page</h1>
+    <form method="POST" action="about.html">
+        <fieldset>
+            <legend>Survey</legend>
+            <!--ADD 4 questions per div-->
+            <div class="form-div">
+                <p>1. Have you ever heard about the term crypto currencies for example: bitcons or etherum ?</p>
+                <label><input name="one" value="yes" type="radio">Yes</label>
+                <label><input name="one" value="no" type="radio">No</label>
+                <label><input name="one" value="idk" type="radio">Not Sure</label>
+
+                <p>2. In your opinion, which of the following is more convient in investing?</p>
+                <label><input name="two" value="yes" type="checkbox">Crypto Currency</label>
+                <label><input name="two" value="no" type="checkbox">Stock Market</label>
+                <label><input name="two" value="notatall" type="checkbox">Mutual Funds</label>
+                
+                <p>3. Do you have any Plans to invest in Crypto Curriencies</p>
+                <label><input name="three" value="yes" type="radio">Yes</label>
+                <label><input name="three" value="no" type="radio">No</label>
+                <label><input name="three" value="idk" type="radio">Not a Good idea to do so</label>
+                
+                <p>4. Have you ever invested in Crypto Curriencies</p>
+                <label><input name="four" value="0" type="radio">Never</label>
+                <label><input name="four" value="1" type="radio">Once</label>
+                <label><input name="four" value="2to5" type="radio">2 to 5 times</label>
+                <label><input name="four" value="6to10" type="radio">6 - 10 times</label>
+                <label><input name="four" value="10plus" type="radio">More than 10 times</label>
+            </div>
+            <div class="form-div">
+                <p>5. Have you ever heard the name of any popular Crypto Curriencies</p>
+                <label><input name="three" value="yes" type="radio">Yes</label>
+                <label><input name="three" value="no" type="radio">No</label>
+                <label><input name="three" value="idk" type="radio">Never heard of it</label>
+                
+
+            </div>
+            <div class="form-div">
+                
+            </div>
+            <div class="form-div">
+                
+                <input class="sub" type="submit" value="Submit">
+            </div>
+            <button type="button" class="sub" id="aa" onclick="next(1)">Next</button>
+        </fieldset>
+    </form>
+    <script>
+        var curDiv = 0;
+        showDiv(curDiv);
+
+        function showDiv(n) {
+            //Function to display specified tab of the form
+            var x = document.getElementsByClassName("form-div");   
+            x[n].style.display = "block";
+        }
+        
+        function next(n) {
+            var x = document.getElementsByClassName("form-div");
+            x[curDiv].style.display = "none";
+            curDiv = curDiv + n;
+            //display the correct tab
+            showDiv(curDiv);
+            if(curDiv == 3) {
+                document.getElementById("aa").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

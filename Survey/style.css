@@ -1,0 +1,21 @@
+form {
+    background: lightblue;
+}
+
+.form-div {  
+    padding: 20px 30px;  
+    display: none;  
+}
+
+.sub {
+    width: 10%;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    display: flex;
+    margin-bottom: 8px;
+  }
